@@ -6,18 +6,18 @@ typedef struct node
 	int figure;
 	struct node *next;
 }Node,*NOde;
-NOde space()//·ÖÅäÕ»¶¥¿Õ¼ä 
+NOde space()//åˆ†é…æ ˆé¡¶ç©ºé—´ 
 {
 	NOde top;
 	top=new Node;
 	top->next=NULL; 
 	return top;
 }
-NOde Incoming_stack(NOde top)//ÈëÕ» 
+NOde Incoming_stack(NOde top)//å…¥æ ˆ 
 {
 	NOde p;
 	Node s;
-	cout<<"½«Ö´ÐÐÈëÕ»²Ù×÷ÇëÊäÈëÊý×Ö£¬ÊäÈë0½«½áÊø"<<endl;
+	cout<<"å°†æ‰§è¡Œå…¥æ ˆæ“ä½œè¯·è¾“å…¥æ•°å­—ï¼Œè¾“å…¥0å°†ç»“æŸ"<<endl;
 	while(1)
 	{
 	p=new Node;
@@ -33,33 +33,33 @@ NOde Incoming_stack(NOde top)//ÈëÕ»
 	}
 	return top->next;	
 }
-void deliver_from_godown(NOde top)//³öÕ» 
+void deliver_from_godown(NOde top)//å‡ºæ ˆ 
 {
 	NOde s;
-	cout<<"µ±Ç°Õ»ÖÐÔªËØÎª£º"; 
+	cout<<"å½“å‰æ ˆä¸­å…ƒç´ ä¸ºï¼š"; 
 	while(top!=NULL)
 	{
 		s=top;
 		cout<<top->figure<<setw(6);
 		top=top->next;
-		delete s;//³·Ïú´Ë¿Õ¼ä 
+		delete s;//æ’¤é”€æ­¤ç©ºé—´ 
 	}
 	return;
 }
-NOde stack_top(NOde top)//Õ»¶¥ÔªËØ 
+NOde stack_top(NOde top)//æ ˆé¡¶å…ƒç´  
 {
 	NOde s=top;
 	if(top!=NULL)
 	{
-		cout<<"µ±Ç°Õ»¶¥ÔªËØÎª£º"<<top->figure<<endl; 
+		cout<<"å½“å‰æ ˆé¡¶å…ƒç´ ä¸ºï¼š"<<top->figure<<endl; 
 		top=top->next;
-		delete s;//³·Ïú´Ë¿Õ¼ä 
+		delete s;//æ’¤é”€æ­¤ç©ºé—´ 
 	}
 	else
-	cout<<"Õ»¶¥Ã»ÓÐÔªËØ"<<endl;
+	cout<<"æ ˆé¡¶æ²¡æœ‰å…ƒç´ "<<endl;
 	return top;
 }
-void Get_the_number(NOde top)//»ñÈ¡Õ»ÖÐÔªËØ¸öÊý 
+void Get_the_number(NOde top)//èŽ·å–æ ˆä¸­å…ƒç´ ä¸ªæ•° 
 {
 	int number=0;
 	while(top!=NULL)
@@ -67,17 +67,17 @@ void Get_the_number(NOde top)//»ñÈ¡Õ»ÖÐÔªËØ¸öÊý
 		number++;
 		top=top->next;
 	 } 
-	 cout<<"Õ»ÖÐÔªËØ¸öÊýÎª£º"<<number<<endl;
+	 cout<<"æ ˆä¸­å…ƒç´ ä¸ªæ•°ä¸ºï¼š"<<number<<endl;
 	 return;
 }
 int main()
 {
 	NOde top; 
-	top=space();//·ÖÅäÕ»¶¥¿Õ¼ä
-	top=Incoming_stack(top);//ÈëÕ» 
-	Get_the_number(top);//»ñÈ¡Õ»ÖÐÔªËØ¸öÊý
-	top=stack_top(top);//Õ»¶¥ÔªËØ
- 	deliver_from_godown(top);//³öÕ» 
+	top=space();//åˆ†é…æ ˆé¡¶ç©ºé—´
+	top=Incoming_stack(top);//å…¥æ ˆ 
+	Get_the_number(top);//èŽ·å–æ ˆä¸­å…ƒç´ ä¸ªæ•°
+	top=stack_top(top);//æ ˆé¡¶å…ƒç´ 
+ 	deliver_from_godown(top);//å‡ºæ ˆ 
  	system("pause");
 	return 0;
 }
